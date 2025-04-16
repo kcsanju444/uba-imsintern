@@ -6,7 +6,7 @@ export async function create() {
   const firstName = readlineSync.question('Enter first name: ');
   const lastName = readlineSync.question('Enter last name: ');
   
-  const newItem = await CrudController.create(firstName, lastName);  // Assuming CrudController.create() is async
+  const newItem = await CrudController.create(firstName, lastName); 
   
   console.log(`Created: ${newItem.firstName} ${newItem.lastName}`);
 }

@@ -27,7 +27,6 @@ function loadData(): Person[] {
   const rawData = fs.readFileSync(dbPath, 'utf-8');
   const items: Person[] = JSON.parse(rawData);
 
-  // Ensure existing items have valid IDs, then set nextId
   nextId = items.length > 0
     ? Math.max(...items.map(i => i.id ?? 0)) + 1
     : 1;
@@ -39,7 +38,6 @@ function saveData() {
   fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-// Load data on initialization
 data = loadData();
 
 // Create
